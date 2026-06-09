@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graduación Rosario</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Poppins,sans-serif;background:linear-gradient(180deg,#fff8f8,#faf7f2);color:#5C4A4A}
+.container{max-width:520px;margin:auto;padding:15px}
+.card{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 10px 35px rgba(0,0,0,.08);margin-bottom:22px}
+.hero img,.photo img{width:100%;display:block}
+.date{padding:15px;text-align:center;font-weight:600}
+.countdown{display:flex;justify-content:center;gap:12px;padding:20px}
+.box{text-align:center}.num{font-size:2rem;font-weight:700}.lbl{font-size:.8rem}
+.content{padding:25px;text-align:center}
+h1,h2,h3{font-family:"Playfair Display",serif}
+.btn{display:inline-block;background:#f7e6e8;color:#5C4A4A;padding:12px 22px;border-radius:25px;text-decoration:none;font-weight:600}
+.section{padding:25px;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="card hero">
+<img src="https://thumbs.dreamstime.com/b/gato-con-el-sombrero-de-la-graduaci%C3%B3n-8697502.jpg">
+<div class="date">20 de Junio de 2026 • 12:00 PM</div>
+<div class="countdown">
+<div class="box"><div id="d" class="num">00</div><div class="lbl">Días</div></div>
+<div class="box"><div id="h" class="num">00</div><div class="lbl">Horas</div></div>
+<div class="box"><div id="m" class="num">00</div><div class="lbl">Min</div></div>
+<div class="box"><div id="s" class="num">00</div><div class="lbl">Seg</div></div>
+</div>
+</div>
+
+<div class="card photo">
+<img src="https://i.wpfc.ml/gx/th2bok.png">
+<div class="content">
+<h1>Rosario del Carmen Cruz López</h1>
+<h2>Médico Cirujano</h2>
+<p>Con mucha alegría te invito a celebrar uno de los momentos más importantes de mi vida.</p>
+</div>
+</div>
+
+<div class="card section">
+<h2>⛪ Ceremonia Religiosa</h2>
+<p>12:00 PM</p>
+<p>Templo de San Ramón Nonato<br>San Cristóbal de Las Casas, Chiapas</p>
+<a class="btn" target="_blank" href="https://www.google.com/maps/place/Templo+de+San+Ram%C3%B3n+Nonato/@16.7374757,-92.6523493,17z/data=!3m1!4b1!4m6!3m5!1s0x85ed450e41b1bf43:0x140824a8c3a3c426!8m2!3d16.7374757!4d-92.649769!16s%2Fg%2F11b66slmk3">Ver ubicación</a>
+</div>
+
+<div class="card section">
+<h2>🎉 Recepción</h2>
+<p>13:00 Horas</p>
+<p>Real del Santuario 67<br>San Cristóbal de Las Casas, Chiapas</p>
+<a class="btn" target="_blank" href="https://www.google.com/maps/place/Real+del+Santuario+67,+Fraccionamiento+del+Santuario,+29285+San+Crist%C3%B3bal+de+las+Casas,+Chis./@16.710094,-92.6467445,20z">Ver ubicación</a>
+</div>
+
+<div class="card section">
+<h2>💌 Confirmar asistencia</h2>
+<p>Invitación válida para 2 adultos</p>
+<a class="btn" target="_blank" href="https://wa.me/529671433929?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20graduaci%C3%B3n%20de%20Rosario%20del%20Carmen%20Cruz%20L%C3%B3pez.">Confirmar asistencia</a>
+</div>
+
+</div>
+<script>
+const t=new Date("2026-06-20T12:00:00").getTime();
+setInterval(()=>{
+ let n=new Date().getTime(),x=t-n;
+ let d=Math.floor(x/86400000);
+ let h=Math.floor((x%86400000)/3600000);
+ let m=Math.floor((x%3600000)/60000);
+ let s=Math.floor((x%60000)/1000);
+ dEl.textContent=String(d).padStart(2,'0');
+ hEl.textContent=String(h).padStart(2,'0');
+ mEl.textContent=String(m).padStart(2,'0');
+ sEl.textContent=String(s).padStart(2,'0');
+},1000);
+const dEl=document.getElementById('d');
+const hEl=document.getElementById('h');
+const mEl=document.getElementById('m');
+const sEl=document.getElementById('s');
+</script>
+</body>
+</html>
